@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     z-index: 2;
-    width: 260px;
+    width: 80px;
     background: $white-color;
     @include shadow-big();
 
@@ -46,7 +46,7 @@
         position: relative;
         height: calc(100vh - 75px);
         overflow: auto;
-        width: 260px;
+        width: 80px;
         z-index: 4;
 
         padding-bottom: 30px;
@@ -122,7 +122,8 @@
 
     .nav{
         margin-top: 20px;
-        display: block;
+        display: flex;
+        flex-direction: column;
 
         .caret{
             margin-top: 13px;
@@ -211,7 +212,7 @@
           padding-right: 10px;
           text-transform: capitalize;
           font-size: $font-paragraph - 1;
-          padding: 10px 15px;
+          padding: 10px 10px;
     }
 
 
@@ -315,15 +316,15 @@
     &[data-color="orange"]{
         @include set-background-color-button($brand-warning);
     }
-    &[data-color="danger"]{
+   /*  &[data-color="danger"]{
         @include set-background-color-button($brand-danger);
-    }
+    } */
     &[data-color="rose"]{
         @include set-background-color-button($brand-rose);
     }
 
     &[data-color="white"]{
-        @include set-background-color-button($white-color);
+       // @include set-background-color-button($white-color);
         @include sidebar-active-color($black-color);
     }
 
@@ -426,7 +427,7 @@
     display: none !important;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 768px) {
     .sidebar-mini{
         .visible-on-sidebar-regular{
             display: none !important;
@@ -468,7 +469,7 @@
         }
 
         .sidebar:hover{
-            width: 260px;
+            width: 80px;
 
             .logo{
                 a.logo-normal{
@@ -478,7 +479,7 @@
             }
 
             .sidebar-wrapper{
-                width: 260px;
+                width: 80px;
 
                 > .nav li > a p,
                 > .nav [data-toggle="collapse"] ~ div > ul > li > a .sidebar-normal,
@@ -499,5 +500,12 @@
           bottom: 13px;
         }
       }
+    }
+
+    .sidebar-titles {
+        display: none;
+    }
+    .nav-link {
+        display: grid;
     }
 }
